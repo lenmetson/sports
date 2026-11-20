@@ -11,7 +11,11 @@ out.add("x-wr-calname", "Sports")
 seen = set()
 
 for url in urls:
-    cal = Calendar.from_ical(requests.get(url, timeout=30).content)
+    r = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+    if not r.text.lstrip().startswith("BEGIN:VCALENDAR"):
+        print(f"Skipped {url}")
+        continue
+    cal = Calendar.from_ical(r.content)
     for c in cal.subcomponents:
         key = c.get("TZID") if c.name == "VTIMEZONE" else c.get("UID")
         if c.name in ("VTIMEZONE", "VEVENT") and key not in seen:
