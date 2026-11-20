@@ -1,0 +1,7 @@
+https://sporting-events.org/feeds/premier-league.ics
+https://sporting-events.org/feeds/fifa-world-cup.ics
+https://sporting-events.org/feeds/champions-league.ics
+https://sporting-events.org/feeds/cricket.ics
+https://sporting-events.org/feeds/rugby-union.ics
+https://sporting-events.org/feeds/six-nations.ics
+# FotMob ICS links below
